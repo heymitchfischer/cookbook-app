@@ -1,8 +1,22 @@
 <h1>Recipe Info</h1>
 <h2>Title: <%= @recipe.title %></h2>
+<h5>Updated On: <%= @recipe.friendly_updated_at %></h5>
 <h3><%= @recipe.chef %></h3>
-<h4>Ingredients: <%= @recipe.ingredients %></h4>
-<h4>Directions: <%= @recipe.directions %></h4>
+<h5>Prep Time: <%= @recipe.friendly_prep_time %></h5>
+<h4>Ingredients:</h4> 
+<ul>
+<% @recipe.ingredients_list.each do |ingredient| %>
+  <li><%= ingredient %></li>
+<% end %>
+</ul>
+
+
+<h4>Directions: </h4>
+  <ul>
+    <% @recipe.directions_list.each do |direction| %>
+      <li><%= direction %></li>
+  <% end %>
+</ul>
 
 <a href="/recipes/<%= @recipe.id %>/edit" class="btn btn-warning">Edit</a>
 <%= form_tag "/recipes/#{@recipe.id}", method: :delete do %>
