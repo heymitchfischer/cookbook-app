@@ -1,3 +1,5 @@
+<h1>You have visited this page <%= @counter %> times.</h1>
+
 <h2><a href="/recipes/new">Create new recipe?</a></h2>
 <div class="row">
   <% @recipes.each do |recipe| %>
@@ -9,7 +11,6 @@
         <h4>Ingredients: <%= recipe.ingredients %></h4>
         <h4>Directions: <%= recipe.directions %></h4>
       </div>
-
     </div>
   <% end %>
 </div>
