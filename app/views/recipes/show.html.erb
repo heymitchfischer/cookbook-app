@@ -1,8 +1,7 @@
 <h1>Recipe Info</h1>
 <h2>Title: <%= @recipe.title %></h2>
 <h5>Updated On: <%= @recipe.friendly_updated_at %></h5>
-<h3><%= @recipe.chef %></h3>
-<h5>Prep Time: <%= @recipe.friendly_prep_time %></h5>
+<h3><%= @recipe.user %></h3>
 <h4>Ingredients:</h4> 
 <ul>
 <% @recipe.ingredients_list.each do |ingredient| %>
